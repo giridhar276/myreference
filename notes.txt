@@ -1,0 +1,646 @@
+in AI
+======
+python
+R
+SAS 
+
+python IDEs
+------------
+
+IDLE  ( python.org  -- light weighted one )
+
+pycharm
+
+anaconda -   spyder IDE
+
+
+
+****** Everything in python is object *******
+****** Every object contains set of methods *****
+
+python objects
+----------------
+number
+string
+list
+tuple
+dictionary
+set
+
+number
+-------
+number can be integer or decimal or octal or hexa
+
+val = 10
+aval = 454.3
+
+string
+------
+string can be defined in single or double or triple quotes.
+aname = 'python programming'
+bname = "scala programming"
+cname = """unix shell programming"""
+
+
+list  ( array in C ) ( mutable)
+-----
+list is simply set of elements.
+Elements can be set of numbers or strings or any combination
+list elements are defined in []
+
+alist =[10,20,30,40]
+blist =['unix','hadoop','scala']
+clist = [10,20,30,"hadoop",50]
+
+
+tuple  ( READ ONLY , immutable) 
+------
+- tuple contains set of elements
+- Elements can be set of numbers or strings or any combination.
+- tuple elements are defined in ().
+- ****** Elements inside tuple cannot be modified directly******
+- tuple elements are immutable
+
+
+atup = (10,45,54)
+btup = ('unix','oracle','cloud')
+ctup = (10,20,30,"hadoop")
+print(atup)
+print(atup[0]) # 10
+
+dictionary
+-----------
+dictionary contains elements in key-value pairs
+dictionary elements are defined in {}.
+In dictionary .. keys are always UNIQUE
+
+syntax :     object = {key:value , key:value , key:value }
+example:     book = {"chap1":10 ,"chap2": 20 ,"chap3":30  ,"chap4":30 }
+             nums = {1:2,3:4,5:6}
+             book = {"chap1":[10,'Mark','200pages'] ,"chap2":[120,'Rita','400pages']  }
+
+             info = {1:{'chap1':[10,'Mark','200pages']},2:{'chap2':[120,'Rita','400pages'] }
+
+
+set
+-----
+set is unordered collection of UNIQUE elements of same type
+set elements are defined in {}.
+
+aset = {10,10,10,10,10,20}
+
+
+
+builtin function  & methods
+---------------------------
+
+-methods are object specific.
+-all the methods are accessible with . operator  
+
+
+functions are common across all the objects.
+
+
+print()
+list()
+tuple()
+len()
+help()
+
+
+How to display all the list of builtin functions ?
+=====================================================
+In the console ...
+
+dir(__builtins__) 
+
+
+print() :
+len()   : display the length of any object
+input() : capture any string from the keyboard  ( scanf in c  , read in bash )
+range() : display the range of numbers 
+id()    : display some unique identity of the object
+type()  : check the type of object
+isinstance():will return the boolean based on type of object
+max()   : largest number
+min()   : smallest
+sum()   : total of the list
+open()  : open the file
+          fobj = open(filename,mode)
+
+zip()   : combine 2 lists
+enumerate(): read list or tuple with indexing
+
+typecasting functions ( converting from one object to another object )
+--------------------- 	
+list()
+tuple()
+str()
+int()
+dict()
+set()
+float()
+oct()
+hex()
+
+
+
+
+
+
+
+
+
+commenting in python
+---------------------
+
+single line comment :  (# )
+----------------------
+
+multi line comment :
+-------------------
+all the lines defined in between ''' and ''' are ignored by interpreter.
+
+
+
+statements
+-----------
+
+conditional statements
+--------------------
+if
+if-else
+if-elif-elif-elif... else
+
+
+control statements
+------------------
+for
+while
+
+
+jump statements
+---------------
+break
+continue
+
+
+
+
+############### if #######
+level1
+level1
+level1
+level1
+if cond:
+	level2
+	level2
+	level2
+
+
+#################### if -else #############
+level1
+level1
+if cond:
+	level2
+	level2
+	level2
+else:
+	level2
+	level2
+
+
+############## if-elif-elif-elif-else
+
+level1
+level1
+if cond1:
+	level2
+	level2
+elif cond2:
+	level2
+	level2
+elif cond3:
+	level2
+	level2
+else:
+	level2
+	level2
+
+operators
+----------
+
+arithmetic operators :  + - % *  /
+-----------------------
+
+logical operators  :  and     or   not
+-----------------------                     
+                     if  len(name) > 0  and name.isupper() :
+			# do something
+                     if  a < 10 or  a > 100 :
+
+
+assignment operator : ( ++ and -- are NOT allowed in python )
+----------------------
+val =10
+
+val +=10  or  val = val +10
+val *=10  or  val = val * 10
+
+relational operators :    <   <=      >      >=    ==     !=
+------------------------
+
+special operators :     in   
+--------------------	 
+
+                        as ( used in libraries and exception handling)
+
+
+lang = "perl,unix,hadoop,scala,spark,ruby,go"
+if 'python' in lang:
+	print("exists")
+
+alist =[10,20,30]
+if 10 in alist:
+	print("exists")
+
+
+
+
+
+
+
+
+file handling
+--------------
+
+working with flat files  ( .csv  .log  .conf  .txt  .... )
+----------------------------------------------------------
+
+
+opening the file
+---------------
+
+syntax:     object = open(filename, mode)
+example:       fr  = open("clients.txt","r")  --> read operation
+
+               fw  = open("clients.txt","w")  --> write operation
+	       case1 : If the file is not existing.. file will be created
+               case2 : If the file is already existing...  it overwrites  the file
+
+               fa  = open("clients.txt","a")  --> append operation
+	       case1 : If the file is not existing.. file will be created
+               case2 : If the file is already existing...  it appends the output to the file
+
+closing the file
+----------------
+fr.close()
+fw.close()
+fa.close()
+
+
+read operation
+----------------
+-read line by line
+-reading the complete file into list   ( fr.readlines())  ---------> will return the list of all the lines
+-reading the complete file into string ( fr.read() )  --------------> will return the string
+-csv library
+-pandas library
+-json library
+
+
+
+
+
+
+
+
+working with third party files ( .docx doc .xlsx .pdf  mp4 .... )
+------------
+
+1. syntax error
+2. runtime error( sementic error)
+
+exception handling
+-----------------
+Handling the exceptions in the runtime is known as exception handling.
+
+
+try
+except
+else     ( optional)
+finally  ( optional)
+raise    ( optional)
+
+
+user defined functions (or) definition (or) subroutine
+--------------------------------------------------------
+
+function is set of lines defined for the reusability purpose.
+
+
+passing arguments
+-----------------
+fixed arguments
+default arguments
+keyword arguments
+variable length arguments
+
+
+
+libraries
+------------
+
+- builtin libraries
+- third party libraries
+
+
+
+builtin libraries : builtin libraries are generally(logging , math , string , mail operations , ftp  , os operations ) used by everyone and are  installed with python itself.
+
+
+third party libraries : Depending on the customized requirement ( cloud integration, db handling , ML , web , image processing ) it is job of developer to install this third party library from www.pypi.org
+
+2 ways of installing third party library
+-----------
+- installing the library with pip tool /  easy_install tool
+- installing manually
+
+
+
+
+importing library      ( all the methods will be imported )
+--------------------
+import math
+print(math.floor(34.4))
+print(math.tan(2))
+
+
+importing required methods ONLY  ( . operator is NOT required)
+-------------------------------
+from math import tan,floor
+print(tan(3))
+print(floor(45.5))
+
+
+importing with alias name
+-------------------------
+import math as m
+print(m.floor(34.4))
+print(m.tan(3))
+
+
+Installing 3rd party library
+---------------------------
+
+In the Anaconda prompt / console
+
+pip install cx_Oracle
+
+
+
+
+
+
+
+
+
+
+notepad : https://notepad.pw/0hb29g07
+
+
+
+
+frequently used builtin libraries
+-----------------------------------------
+os         : os level activities
+math       : mathematical operations
+sys        :  sys and python config data
+shutil     : copy,move, rmtree  etc
+urllib     : read the web, downloading the files
+logging    : logging all the events
+smtplib    : sending the mails
+ftplib     : performing ftp operations
+sysconfig  :  sys and python config data
+zipfile    : create/extract the zip files
+rarfile    : create/extract the rar files
+cryptopgraphy : encrypting and decrypting the data or files
+tarfile    : create/extract the tar files
+filecmp    : comparing files or directories
+sqlite3    : python default database
+csv        : reading/writing csv files
+xml        : reading/writing xml files
+calendar   : display month,year calendar info
+datetime   : working with date n time
+time       : working with date n time
+fractions  : working with decimal values
+glob       : display all the files
+heapq      : more of array operations ( getting largest among list )
+subprocess : executing system commands in python (  subprocess.getoutput("ls -ltr")
+pdb        : python debugger
+platform   : platform information
+random     : random operations ( shuffling , random digit ... )
+re         : grep + awk + sed
+socket     : networking programming
+stat       : stats of the file
+statistics : basic statistics
+telnetlib  : accessing remote servers    
+
+
+mysql steps
+-------------
+
+displaying all the databases
+------------------------------
+show databases ;
+
+create database
+-------------------
+create database cts ;
+
+accessing your database
+----------------------
+use cts ;
+
+creating the table
+------------------
+create table realestate ( street varchar(100) , city varchar(100) );
+
+insert records
+--------------
+insert into realestate values('101 MG Road' ,'Hyderabad') ;
+insert into realestate values('Beach Road', 'Chennai');
+
+display all the records
+-----------------------
+select * from realestate ;
+
+view the structure of table
+----------------------------
+desc realestate ;
+
+
+
+re  ( regex)
+---
+- search
+- match   ( check ONLY at the beginning of string)
+- replacing(sub)
+- findall
+
+metacharacters or wildcard characters
+------------------------------------------
+^  :  match at the beginning of the string
+      re.search("^python",line)
+
+$  : match at the end of the string
+      re.search("python$",line)
+
+*  : zero or more occurences of the preceding characte
+      re.search("pyt*hon",line)
+      python     ---> valid
+      pytttthon  ---> valid
+      pyhon      ---> valid
+
++  : one ore more occurence of the preceding character
+      re.search("pyt+hon",line)
+
+      python     ---> valid
+      pytttthon  ---> valid
+      pyhon      ---> Invalid
+
+
+?  : either zero or one occurence of the preceding
+      re.search("pyt?hon",line)
+      python     ---> valid
+      pytttthon  ---> Invalid
+      pyhon      ---> valid
+
+.  : any character or digit
+      re.search(".ython",line)
+    
+      python  --> valid
+      1ython  --> valid 
+      qython  --> valid
+
+
+() : (perl|python)
+      re.search("python|perl|unix",line)
+    
+
+[] : charcter class
+      re.search("[qpyg]ython",line)
+     qython  valid
+     python  valid  
+     yython  valid
+     eython  Invalid
+
+{} : { min,max}
+     min to max occurences of the preceding character
+
+     re.search("pyt{4}hon",line)
+     python    Invalid
+     pyttthon  Valid
+     pyhon     Invalid
+
+\d  : any digit
+
+\w  : any word boundary
+
+\s  : whitespace
+
+
+
+
+
+
+
+
+
+
+python setup.py install
+
+
+
+
+will display all the list of 3rd party libraries
+-----------------------------------------------
+pip list
+
+installing the library
+-----------------------
+pip install pymysql
+
+installing particular version
+-------------------------
+pip install pymysql == 0.9.8
+
+remove the library
+-------------------
+pip uninstall pymysql
+
+installing the library manually with pip tool
+--------------------------------------------
+download the required library and navigate to the path
+
+pip install PyMySQL-0.9.3.tar.gz
+
+
+
+
+
+
+
+
+
+
+
+OOP
+--------
+
+functional + libraries
+
+OOP        + libraries
+
+
+OOP
+----
+encapsulation
+inheritance
+polomorphism ( function overload + operator overload )
+data hiding
+
+
+
+class  : class is the bluepoint of the model
+         Every class contains member functions and data members
+
+object : object is the instance of the class
+
+self   : self is the instance of object
+
+
+
+Inside class methods... the first parameter will be always self.
+
+
+
+pandas
+-------
+
+- sypder IDE
+
+- jupyter notebook
+
+
+
+
+
+
+
+
+
+
+
+
+
